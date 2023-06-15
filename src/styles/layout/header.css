@@ -1,4 +1,4 @@
-header {
+main {
     display:grid;
     grid-template-rows: 5vh 20vh 60px;
 }

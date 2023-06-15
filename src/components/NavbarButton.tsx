@@ -28,7 +28,7 @@ function NavbarButton(props: any){
         </div>
         <div className={`dropdown-menu ${open? 'active' : 'inactive'}`}>
           <ul>
-          {dropdownItems.map((item) => <DropdownItem href={item.href} title={item.title}/>)}
+          {dropdownItems.map((item) => <DropdownItem key={item.title} href={item.href} title={item.title}/>)}
           </ul>
         </div>
       </div>
