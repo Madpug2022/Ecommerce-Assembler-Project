@@ -1,5 +1,4 @@
 header {
-    border: 1px solid red;
     display:grid;
-    grid-template-rows: 5vh 120px 60px;
+    grid-template-rows: 5vh 20vh 60px;
 }

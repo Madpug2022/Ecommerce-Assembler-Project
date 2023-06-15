@@ -1,0 +1,40 @@
+.header-searchbar-container{
+    grid-row: 2;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.header-searchbar-container img {
+    height: 18vh;
+}
+.searchbar-container{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    transform: skewX(-4.5deg);
+}
+.searchbar-container form {
+display: flex;
+}
+.searchbar-container input{
+    width: 80vh;
+    height: 5vh;
+    border: none;
+
+}
+.searchbar-container button{
+    background-color: white;
+    margin: 0;
+    height: 5.2vh;
+    width: 5vh;
+    border: none;
+    cursor: pointer;
+
+}
+@media screen and (max-width:500px) {
+    .searchbar-container{
+        display: none;
+    }
+}

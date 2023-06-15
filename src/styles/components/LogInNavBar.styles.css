@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+.log-in-nav-bar-container{
+    grid-row: 1;
+    height: auto;
+}
+.log-in-nav-bar {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: aliceblue;
+    font-family: 'Inconsolata', monospace;
+}
+.log-in-nav-bar .nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: black;
+    font-size: 15px;
+    margin: auto 15px;
+}
+.log-in-nav-bar .nav-link:last-child{
+    margin-left: auto;
+    margin-right: 50px;
+}
+.log-in-nav-bar .nav-link:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width:500px){
+    .log-in-nav-bar .nav-link{
+        font-size: 10px;
+    }
+    .log-in-nav-bar .nav-link:last-child{
+        margin-left: auto;
+        margin-right: 50px;
+    }
+    .log-in-nav-bar .nav-link:hover{
+        text-decoration: none;
+    }
+}
