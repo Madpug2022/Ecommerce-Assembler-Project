@@ -1,8 +1,12 @@
-
+import Carrousel from "../components/Carrousel";
+import FeaturedItems from "../components/FeaturedItems";
 function Featured(){
 
     return (
-        <div>I want the changes of root to be displayed here</div>
+        <>
+        <Carrousel/>
+        <FeaturedItems/>
+        </>
     )
 }
 export default Featured;

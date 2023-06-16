@@ -28,7 +28,7 @@
     position: absolute;
     top: 60px;
     height: 30vh;
-    width: 20vh;
+    width: 10vw;
     background-color: black;
     padding: 10px 20px;
     border-radius: 5px;
@@ -68,4 +68,24 @@
   .dropdown-nav-link:hover{
     background-color: rgba(255, 255, 255, 0.8);
     color: rgba(0, 0, 0, 0.5)
+  }
+  @media screen and (max-width:500px){
+    .menu-trigger{
+      position: absolute;
+      width: 8vh;
+      margin: auto;
+      overflow: hidden;
+      cursor: pointer;
+      color: white;
+      font-size: 10px;
+      top: 10px;
+      padding: 2px 1px;
+      transition: 500ms;
+      border-radius: 5px;
+      transform: skewX(-4.5deg);
+    }
+    .menu-trigger span {
+      font-weight: 600;
+      font-size: 10px;
+    }
   }

@@ -38,3 +38,17 @@
     border-top: 1px solid rgba(255, 255, 255, 0.8);
     cursor: pointer;
   }
+  @media screen and (max-width:500px){
+    .main-nav-link{
+        color: white;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 12px;
+        margin: 0 ;
+        padding: 2px 1px;
+        border-radius: 5px;
+        transform: skewX(-4.5deg);
+        transition: 500ms;
+    }
+  }

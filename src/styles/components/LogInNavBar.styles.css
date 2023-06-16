@@ -2,6 +2,10 @@
 .log-in-nav-bar-container{
     grid-row: 1;
     height: auto;
+    position:sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
 }
 .log-in-nav-bar {
     height: 100%;
