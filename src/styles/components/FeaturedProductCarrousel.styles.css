@@ -1,0 +1,18 @@
+.fProductCarrousel{
+    margin: 40px 20px;
+    background-color: transparent;
+}
+.fProductCarrousel li {
+    border: 5px solid rgba(0,0,0,0.2);
+    margin: auto 5px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px rgba(0,0,0, 0.2);
+    transition-duration: 500ms;
+}
+
+.fProductCarrousel li:hover {
+    border: 5px solid black;
+    position: relative;
+    transform: scale(0.95);
+    box-shadow: 0px 0px 10px rgba(0,0,0, 0.5);
+}
