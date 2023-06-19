@@ -1,6 +1,7 @@
 .fProductCarrousel{
-    margin: 40px 20px;
+    margin: 40px 0;
     background-color: transparent;
+
 }
 .fProductCarrousel li {
     border: 5px solid rgba(0,0,0,0.2);

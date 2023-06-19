@@ -1,4 +1,5 @@
 main {
     display:grid;
-    grid-template-rows: 5vh 20vh 60px;
+    grid-template-rows: 5vh 20vh 60px auto auto auto;
+    grid-template-columns: 100%;
 }

@@ -34,8 +34,8 @@
         font-size: 10px;
     }
     .log-in-nav-bar .nav-link:last-child{
-        margin-left: auto;
-        margin-right: 50px;
+        margin-left: 0;
+        margin-right: 0;
     }
     .log-in-nav-bar .nav-link:hover{
         text-decoration: none;

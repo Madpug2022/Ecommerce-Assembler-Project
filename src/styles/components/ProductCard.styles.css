@@ -40,3 +40,8 @@
     color: whitesmoke;
     border:none;
 }
+@media screen and (max-width:500px)  {
+    .pc-top img {
+        height: 20vh;
+    }
+}

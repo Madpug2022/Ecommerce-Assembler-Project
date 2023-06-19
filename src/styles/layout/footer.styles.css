@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+.footer-container {
+    display: grid;
+    grid-template-rows: 15vh 18vh auto;
+    font-family: 'Inconsolata', monospace;
+}
+.f-top{
+    background-image: url('./resources/40.jpg');
+    filter:brightness(80%);
+}
+
+.f-middle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: space-evenly;
+    color: white;
+    background-color: black;
+    padding-bottom: 4vh;
+}
+.fm-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fm-box a {
+    color: white;
+    text-decoration: none;
+    margin: 4px auto;
+}
+.fm-box a:hover{
+    text-decoration: underline;
+}
+.f-bottom {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 7vw;
+    color: white;
+    border-top: 3px solid white;
+    background-color: black;
+}
+.fb-left{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.fb-left img{
+    height: 16vh;
+    margin: auto 10px;
+    cursor: pointer;
+}
+.fb-rigth {
+    width: 10vw;
+    height: 10vh;
+    display: flex;
+    position: relative;
+    background: black;
+    align-items: center;
+    justify-content: center;
+}
+.btn-flip {
+    background-color: black;
+    border: none;
+    opacity: 1;
+    outline: 0;
+    color: black;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Inconsolata', monospace;
+    text-transform: uppercase;
+  }
+  .btn-flip:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+  .btn-flip:hover:before {
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+  }
+  .btn-flip:after {
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: white;
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    background: #323237;
+    content: 'MATIAS A.C.';
+    transform: translateY(-50%) rotateX(90deg);
+  }
+  .btn-flip:before {
+    border: 1px solid #323237;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: white;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    background: black;
+    content: 'MADE BY';
+    transform: translateY(0) rotateX(0);
+  }
+
+
+@media screen and (max-width: 600px) {
+    .footer-container {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 15vh 18vh auto;
+        font-family: 'Inconsolata', monospace;
+    }
+    .fb-left img{
+        height: 8vh;
+        margin: auto 2px;
+        cursor: pointer;
+    }
+    .f-bottom {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 5px;
+        color: white;
+        border-top: 3px solid white;
+        background-color: black;
+    }
+}
+@media screen and (max-width: 500px) {
+    .btn-flip{
+        display: none;
+    }
+    .footer-container {
+        width: 100%;
+        display: grid;
+        grid-template-rows: 15vh 18vh auto;
+        font-family: 'Inconsolata', monospace;
+    }
+    .fb-left{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 12px;
+    }
+}

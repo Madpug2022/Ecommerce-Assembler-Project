@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
 .navbar-btn {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: 'Montserrat', sans-serif;
+  height: 10vh;
+  width: 100%;
+  margin:auto;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
 }
 .dropdown-menu ul {
     list-style: none;
     padding: 0;
     text-align: center;
+    margin: 0;
+
 }
 .menu-trigger{
     position: absolute;
@@ -27,14 +31,16 @@
   .dropdown-menu{
     position: absolute;
     top: 60px;
-    height: 30vh;
-    width: 10vw;
+    height: auto;
+    width: auto;
     background-color: black;
     padding: 10px 20px;
     border-radius: 5px;
     z-index: 1000;
   }
   .dropdown-menu.active{
+    height: auto;
+    width: auto;
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -69,17 +75,52 @@
     background-color: rgba(255, 255, 255, 0.8);
     color: rgba(0, 0, 0, 0.5)
   }
-  @media screen and (max-width:500px){
-    .menu-trigger{
-      position: absolute;
-      width: 8vh;
-      margin: auto;
+  @media screen and (max-width: 900px) {
+    .menu-trigger {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      margin: 0 auto;
       overflow: hidden;
       cursor: pointer;
       color: white;
-      font-size: 10px;
-      top: 10px;
-      padding: 2px 1px;
+      font-size: 0px;
+      top: 20px;
+      padding: 2px;
+      transition: 500ms;
+      border-radius: 5px;
+      transform: skewX(-4.5deg);
+    }
+    .menu-trigger span {
+      text-align: bottom;
+      font-weight: 600;
+      font-size: 12px;
+      transform: none;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+
+    .navbar-btn {
+      width: 100%;
+      margin: 0;
+    }
+    .menu-trigger {
+      position: relative;
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+      width: 12vw;
+      margin: 0 auto;
+      overflow: hidden;
+      cursor: pointer;
+      color: white;
+      font-size: 0px;
+      top: 20px;
+      padding: 2px;
       transition: 500ms;
       border-radius: 5px;
       transform: skewX(-4.5deg);
@@ -87,5 +128,6 @@
     .menu-trigger span {
       font-weight: 600;
       font-size: 10px;
+      transform: none;
     }
   }

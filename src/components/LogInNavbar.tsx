@@ -8,7 +8,7 @@ function LogInNavbar(){
         <nav className="log-in-nav-bar">
             <a href="https://github.com/Madpug2022" target="_blank" className="nav-link"><FaGithub/>@Madpug2022</a>
             <Link to="/" className="nav-link"><FaInstagram/>@Pl∆ayStore</Link>
-            <Link to="/" className="nav-link">Stores</Link>
+            <Link to="/" className="nav-link">Store</Link>
             <Link to="/" className="nav-link">Company</Link>
             <Link to="/" className="nav-link">Contact</Link>
             <Link to="/" className="nav-link"><BsFillPersonFill/>Log In</Link>
