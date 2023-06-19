@@ -24,6 +24,7 @@
     flex-direction: column;
     align-items: center;
 }
+
 .fm-box a {
     color: white;
     text-decoration: none;
@@ -152,6 +153,12 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        font-size: 12px;
+    }
+    .fm-box h2 {
+        font-size: 20px;
+    }
+    .fm-box a {
         font-size: 12px;
     }
 }
