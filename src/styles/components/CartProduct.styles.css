@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
+.cart-item {
+    font-family: 'Montserrat', sans-serif;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    border: 2px solid #EEEEEE;
+    padding: 5px;
+    margin: 4px 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+.cart-item img {
+    height: 15vh;
+}
+.cart-item .description {
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+}
+.count-handler {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+}
+.count-handler input{
+    width: 4vh;
+    margin: auto 5px;
+}
+.count-handler button {
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    transition-duration: 0.5s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.count-handler button:hover {
+    color: white;
+    background-color: black;
+
+}

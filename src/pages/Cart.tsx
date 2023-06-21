@@ -1,5 +1,6 @@
 import '../styles/pages/Cart.styles.css';
 import { useState, ChangeEvent } from 'react';
+import CartProduct from '../components/CartProduct';
 
 interface ShipmentOptionsState {
     freeShipment: boolean;
@@ -26,7 +27,7 @@ function Cart(){
             <div className="cart-container">
                 <div className="c-left">
                     <div className="product-container">
-                        Products goes here
+                        <CartProduct/>
                     </div>
                 </div>
                 <div className="c-rigth">
