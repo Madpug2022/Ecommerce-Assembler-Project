@@ -1,12 +1,15 @@
 import './styles/App.css'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
+import { ShopContextProvider } from './context/ShopContext'
 
 function App() {
   return (
     <>
-    <Header/>
-    <Footer/>
+    <ShopContextProvider>
+      <Header/>
+      <Footer/>
+    </ShopContextProvider>
     </>
   )
 }

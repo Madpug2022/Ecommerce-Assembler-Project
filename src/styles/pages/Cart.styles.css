@@ -110,13 +110,21 @@
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 20px;
     margin: 1vh;
-    height: auto;
     padding-bottom: 3vh;
 }
 .product-container {
     display: flex;
+    max-height: 40vh;
     flex-direction: column;
     margin: 1vh;
     height: 100%;
     overflow-y: scroll;
+}
+@media screen and (max-width:500px) {
+    .cart-container {
+        display: grid;
+        margin: 20px 2%;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: auto auto;
+    }
 }

@@ -1,14 +1,22 @@
 import '../styles/pages/Cart.styles.css';
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useContext, useRef } from 'react';
 import CartProduct from '../components/CartProduct';
-
+import { ShopContext } from '../context/ShopContext';
+import { featuredProducts } from '../assets/products.db';
 interface ShipmentOptionsState {
     freeShipment: boolean;
     premiumShipment: boolean;
   }
 
 function Cart(){
+    const delivery = useRef<HTMLElement>(null)
+    const shopContext = useContext(ShopContext);
 
+    if(!shopContext) {
+        return null;
+    }
+
+    const { cartItems, getTotalCartAmmount } = shopContext;
         const [shipmentOptions, setShipmentOptions] = useState<ShipmentOptionsState>({
             freeShipment: false,
             premiumShipment: false,
@@ -16,10 +24,16 @@ function Cart(){
 
         const handleCheckboxChange = (e: ChangeEvent<HTMLInputElement>) => {
             const { name } = e.target;
-    setShipmentOptions(() => ({
-      freeShipment: name === 'freeShipment',
-      premiumShipment: name === 'premiumShipment',
-    }));
+            console.log(name)
+            if (name === 'freeShipment' && delivery.current !== null) {
+                delivery.current.innerText = '0'
+            } else if (name === 'premiumShipment' && delivery.current !== null) {
+                delivery.current.innerText = '8'
+            }
+            setShipmentOptions(() => ({
+                freeShipment: name === 'freeShipment',
+                premiumShipment: name === 'premiumShipment',
+            }));
         };
     return (
         <section className="cart-page">
@@ -27,7 +41,11 @@ function Cart(){
             <div className="cart-container">
                 <div className="c-left">
                     <div className="product-container">
-                        <CartProduct/>
+                    {featuredProducts.map((product) => {
+                        if (cartItems[product.productId] !== 0) {
+                            return <CartProduct key={product.productId} product={product}/>
+                        }
+                    })}
                     </div>
                 </div>
                 <div className="c-rigth">
@@ -56,14 +74,14 @@ function Cart(){
 
                     </div>
                     <div className='price-box'>
-                        <span>Subtotal:</span>
-                        <span><b>$</b></span>
+                        <span>Subtotal: </span>
+                        <span><b>{getTotalCartAmmount()} </b><b> €</b></span>
                         <span>Delivery</span>
-                        <span><b>$</b></span>
+                        <span><b ref={delivery}>0</b><b> €</b></span>
                     </div>
                     <div className='total-box'>
                         <span><b>Total:</b></span>
-                        <span><b>$</b></span>
+                        <span><b>{(getTotalCartAmmount() && delivery.current) ? (Number(getTotalCartAmmount()) + Number(delivery.current.innerText)) + ' €' : Number(getTotalCartAmmount()) + ' €'}</b></span>
                     </div>
                     <button className='checkout-btn'>Checkout</button>
                     <span className='warng-checkout'>This site is protected by a giant gnome with a stick please read our <a href='/'>Terms of services and elden contract</a></span>

@@ -1,15 +1,26 @@
 import '../styles/components/CartProduct.styles.css'
-function CartProduct(){
+import { Product } from '../interfaces/product'
+import { ShopContext } from '../context/ShopContext'
+import { useContext } from 'react'
+function CartProduct(props: {product: Product}){
+    const {productId, name, img, price} = props.product
+    const shopContext = useContext(ShopContext);
+
+    if(!shopContext) {
+        return null;
+    }
+    const { cartItems, addToCart, removeFromCart, updateCartItemCount } = shopContext;
+
     return (
     <div className='cart-item'>
-        <img src='./resources/featured-p/0.jpg'/>
+        <img src={img}/>
         <div className="description">
-            <p> {" "} <b> Testing </b></p>
-            <p> Test €</p>
+            <p> {" "} <b> {name} </b></p>
+            <p> {price} €</p>
             <div className="count-handler">
-                <button>+</button>
-                <input type='text'></input>
-                <button>-</button>
+                <button onClick={() => removeFromCart(productId)}>-</button>
+                <input type='text' value={cartItems[productId]} onChange={(e) => updateCartItemCount(Number(e.target.value), productId)}></input>
+                <button onClick={() => addToCart(productId)}>+</button>
             </div>
         </div>
     </div>
