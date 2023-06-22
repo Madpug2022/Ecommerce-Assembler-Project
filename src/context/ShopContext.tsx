@@ -8,11 +8,11 @@ const getDefaultCart =(): CartItems => {
         if (savedCartItems) {
             return (JSON.parse(savedCartItems))
         } else {
-    for (let i = 0; i < featuredProducts.length; i++){
-        let pId = featuredProducts[i].productId;
-        cart[pId] = 0;
-    }
-    return cart}
+        for (let i = 0; i < featuredProducts.length; i++){
+            let pId = featuredProducts[i].productId;
+            cart[pId] = 0;
+        }
+        return cart}
 }
 
 export const ShopContextProvider = (props: ShopContextProviderProps) => {

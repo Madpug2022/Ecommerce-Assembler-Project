@@ -19,9 +19,9 @@ function ProductCard(props: Product){
             animationIn: ["animate__animated", "animate__fadeIn"],
             animationOut: ["animate__animated", "animate__fadeOut"],
             dismiss: {
-              duration: 3000,
+            duration: 3000,
             }
-          });
+        });
     }
     return (
         <div className="product-card" id={productId}>
