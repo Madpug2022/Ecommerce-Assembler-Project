@@ -6,6 +6,9 @@ export interface ShopContextValue {
     getTotalCartAmmount: () => number | string;
     getTotalItems: () => number;
     updateCartItemCount: (newAmmount:number, id: string) => void;
+    openModal: boolean;
+    toggleModal: () => void;
+    closeModal: () => void;
 }
 export interface ShopContextProviderProps {
     children: ReactNode;

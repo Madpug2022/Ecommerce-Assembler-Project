@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+.modal-background {
+  width: 37vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1005;
+  transform: translatex(100%);
+  animation: expand 0.4s forwards;
+  font-family: 'Inconsolata', monospace;
+}
+.modal-container {
+  width: 500px;
+  height: 90vh;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+.modal-top button {
+  height: 3vh;
+  width: 1.5vw;
+  border: 0;
+  font-size: 12px;
+  border-radius: 25px;
+  background-color: transparent;
+  cursor: pointer;
+}
+.modal-tittle{
+  margin: 0 auto;
+}
+.modal-container img {
+  height: 45vh;
+}
+.modal-body {
+  margin: 0 auto;
+}
+.modal-body .log-in {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  align-items: flex-start;
+}
+.modal-body .log-in label {
+  margin-top: 10px;
+  font-size: 12px;
+}
+.modal-body .log-in input {
+  margin-top: 1px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 8px;
+  width: 100%;
+  color: white;
+}
+.modal-body .log-in button {
+margin: 3px auto 0 5px;
+width: 100%;
+padding: 5px;
+font-family: 'Inconsolata', monospace;
+border: solid 1px black;
+cursor: pointer;
+background-color: transparent;
+transition-duration: 0.5s;
+}
+.modal-body .log-in button:hover {
+background-color: black;
+color: white;
+}
+.modal-footer{
+  margin: auto;
+}
+.modal-footer button {
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  font-family: 'Inconsolata', monospace;
+  cursor: pointer;
+}
+.modal-footer button:hover {
+  text-decoration: underline;
+}
+@keyframes expand {
+ 0% {
+    transform: translatex(100%);
+ }
+ 100% {
+    transform: translatex(0%);
+ }
+}
+@media screen and (max-width:1000px){
+.modal-background {
+  background-color: transparent;
+}
+}
+@media screen and (max-width:500px) {
+  .modal-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .modal-container img {
+    height: 22vh;
+  }
+  .modal-top button {
+    height: 3vh;
+    width: 1.5vw;
+    border: 0;
+    font-size: 12px;
+    border-radius: 25px;
+    color: black ;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .modal-body .log-in input {
+    margin-top: 1px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 4px;
+    width: 100%;
+    color: white;
+  }
+  .modal-footer button {
+    border: none;
+    width: 100%;
+    background-color: transparent;
+    font-family: 'Inconsolata', monospace;
+    cursor: pointer;
+    font-size: 10px;
+  }
+}

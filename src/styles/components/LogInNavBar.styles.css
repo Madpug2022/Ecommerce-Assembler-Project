@@ -26,9 +26,30 @@
     margin-left: auto;
     margin-right: 50px;
 }
+.nav-button {
+    margin: 0;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-family: 'Inconsolata', monospace
+}
 .log-in-nav-bar .nav-link:hover{
     text-decoration: underline;
 }
+@media screen and (max-width:800px){
+    .log-in-nav-bar .nav-link{
+        font-size: 12px;
+    }
+    .log-in-nav-bar .nav-link:last-child{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .log-in-nav-bar .nav-link:hover{
+        text-decoration: none;
+    }
+}
+
 @media screen and (max-width:500px){
     .log-in-nav-bar .nav-link{
         font-size: 10px;

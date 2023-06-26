@@ -17,7 +17,13 @@ const getDefaultCart =(): CartItems => {
 
 export const ShopContextProvider = (props: ShopContextProviderProps) => {
     const [cartItems, setCartItems] =useState<CartItems>(getDefaultCart());
-
+    const [openModal, setOpenModal] = useState(false)
+    const toggleModal = () => {
+        setOpenModal(!openModal);
+    }
+    const closeModal = () => {
+        setOpenModal(false);
+    }
     useEffect(() => {localStorage.setItem('userCart', JSON.stringify(cartItems));}, [cartItems]);
 
 
@@ -56,7 +62,7 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         setCartItems((prev) => ({ ...prev, [id]: newAmmount }));
     }
 
-    const contextValue: ShopContextValue = {cartItems, addToCart, removeFromCart, getTotalCartAmmount, getTotalItems, updateCartItemCount};
+    const contextValue: ShopContextValue = {cartItems, addToCart, removeFromCart, getTotalCartAmmount, getTotalItems, updateCartItemCount, openModal, toggleModal, closeModal};
     return (
         <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
       );
