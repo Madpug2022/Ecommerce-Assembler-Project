@@ -11,7 +11,7 @@ function LogInNavbar(){
     if(!shopContext) {
         return null;
     }
-    const { openModal, toggleModal } = shopContext;
+    const { openModal, toggleModal, buttonText, logOut } = shopContext;
  return (
     <>
     <div className="log-in-nav-bar-container">
@@ -21,7 +21,7 @@ function LogInNavbar(){
             <Link to="/" className="nav-link">Store</Link>
             <Link to="/" className="nav-link">Company</Link>
             <Link to="/" className="nav-link">Contact</Link>
-            <button onClick={() => { toggleModal() }} className="nav-link nav-button"><BsFillPersonFill/>Log In</button>
+            {buttonText !== 'Log In' ? <button onClick= {() => logOut()} className="nav-link nav-button">Log Out</button> : <></>}<button disabled={buttonText !== 'Log In'? true : false} onClick={() => { toggleModal() }} className="nav-link nav-button"><BsFillPersonFill/>{buttonText}</button>
         </nav>
     </div>
     {openModal && <LoginModal/>}

@@ -22,9 +22,8 @@
     font-size: 15px;
     margin: auto 15px;
 }
-.log-in-nav-bar .nav-link:last-child{
+.log-in-nav-bar .nav-link:nth-child(6){
     margin-left: auto;
-    margin-right: 50px;
 }
 .nav-button {
     margin: 0;

@@ -9,6 +9,14 @@ export interface ShopContextValue {
     openModal: boolean;
     toggleModal: () => void;
     closeModal: () => void;
+    buttonText: string;
+    updateButtonText: (text:string) => void
+    logOut: () => void;
+    loggedUser: any;
+    handleLoged: (user:any) => any;
+    userList: any[];
+    setUserList: ([]:any) =>any
+
 }
 export interface ShopContextProviderProps {
     children: ReactNode;

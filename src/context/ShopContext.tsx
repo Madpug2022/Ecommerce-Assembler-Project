@@ -2,9 +2,27 @@ import { createContext, useState, useEffect } from "react";
 import { ShopContextValue, ShopContextProviderProps, CartItems } from  "../interfaces/shopContext"
 import { featuredProducts } from '../assets/products.db'
 export const ShopContext = createContext<ShopContextValue | null>(null);
-const getDefaultCart =(): CartItems => {
-    let cart: CartItems = {};
-    const savedCartItems = localStorage.getItem("userCart");
+
+
+export const ShopContextProvider = (props: ShopContextProviderProps) => {
+    const [userList, setUserList] = useState<any[]>([])
+
+    const [loggedUser, setLogedUser] = useState({
+        email: "",
+        password: ""
+    });
+
+    const loged = () => {
+        const userEmail: string | null = localStorage.getItem('loged user');
+        if (userEmail){
+        setButtonText(userEmail.replace(/"/g, ''))}
+    }
+    useEffect(() => loged(),
+    [])
+
+    const getDefaultCart = (): CartItems => {
+        let cart: CartItems = {};
+        let savedCartItems = localStorage.getItem("Cart");
         if (savedCartItems) {
             return (JSON.parse(savedCartItems))
         } else {
@@ -13,9 +31,31 @@ const getDefaultCart =(): CartItems => {
             cart[pId] = 0;
         }
         return cart}
-}
+    };
 
-export const ShopContextProvider = (props: ShopContextProviderProps) => {
+    const [buttonText, setButtonText] = useState("Log In");
+
+    const handleLoged = (user: any) => {
+        setLogedUser({
+            email: user.email,
+            password: user.password
+        });
+    }
+    const updateButtonText = (text: string) => {
+        setButtonText(text);
+      };
+    const logOut = async() => {
+        setButtonText("Log In");
+        localStorage.removeItem("isLoged");
+        localStorage.removeItem("token");
+        localStorage.removeItem("loged user");
+        localStorage.removeItem("Cart");
+        setLogedUser({
+            email: '',
+            password: '',
+        })
+    }
+
     const [cartItems, setCartItems] =useState<CartItems>(getDefaultCart());
     const [openModal, setOpenModal] = useState(false)
     const toggleModal = () => {
@@ -24,8 +64,9 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
     const closeModal = () => {
         setOpenModal(false);
     }
-    useEffect(() => {localStorage.setItem('userCart', JSON.stringify(cartItems));}, [cartItems]);
-
+    useEffect(() => {
+        localStorage.setItem('Cart', JSON.stringify(cartItems));
+        }, [cartItems]);
 
     const getTotalItems = () => {
         let total = 0;
@@ -47,7 +88,6 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
     }
     const addToCart = (id: string) => {
         setCartItems((prev) => ({ ...prev, [id]: prev[id] + 1  }));
-        console.log(cartItems);
       };
 
     const removeFromCart = (id: string) => {
@@ -62,7 +102,7 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         setCartItems((prev) => ({ ...prev, [id]: newAmmount }));
     }
 
-    const contextValue: ShopContextValue = {cartItems, addToCart, removeFromCart, getTotalCartAmmount, getTotalItems, updateCartItemCount, openModal, toggleModal, closeModal};
+    const contextValue: ShopContextValue = {cartItems, addToCart, removeFromCart, getTotalCartAmmount, getTotalItems, updateCartItemCount, openModal, toggleModal, closeModal, buttonText, updateButtonText, logOut, loggedUser, handleLoged, userList, setUserList};
     return (
         <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
       );

@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "token": "1",
+      "email": "admin@admin.com",
+      "password": "admin"
+    },
+    {
+      "token": "2",
+      "email": "user@user.com",
+      "password": "user"
+    }
+  ]
+}

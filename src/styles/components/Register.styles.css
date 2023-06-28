@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+.instructions {
+    display: inline-block;
+    font-family: 'Inconsolata', monospace;
+    margin: 4px auto;
+    color: white;
+    background-color: black ;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+}
+.offscreen {
+    display: none;
+}
+.errmsg{
+    text-align: center;
+    color: white;
+    background-color: #D2122E;
+    border-radius: 8px;
+    padding: 5px;
+}
