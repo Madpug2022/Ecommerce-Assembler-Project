@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+.filters-bar {
+    font-family: 'Inconsolata', monospace;
+    display: flex;
+    flex-direction: column;
+}
+.fb-category{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    margin: 3vh 0;
+}
+.fb-category b{
+    margin-bottom: 5px;
+}
+.fb-button{
+    font-family: 'Inconsolata', monospace;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    margin: 10px auto 10px 0;
+    font-weight: 400;
+}
+.fb-button:hover{
+    font-weight: 800;
+}

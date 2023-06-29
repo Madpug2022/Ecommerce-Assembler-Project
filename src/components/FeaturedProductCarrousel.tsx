@@ -4,6 +4,7 @@ import {featuredProducts} from '../assets/products.db'
 import ProductCard from './ProductCard'
 import '../styles/components/FeaturedProductCarrousel.styles.css'
 
+
 function FeaturedProductCarrousel(){
     const responsive = {
         desktop: {
@@ -23,8 +24,18 @@ function FeaturedProductCarrousel(){
         <>
 
         <Carousel className="fProductCarrousel" responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={3000}>
-        {featuredProducts.map((product) => { return (
-            <ProductCard key={product.productId} productId={product.productId} name={product.name} price={product.price} img={product.img}/>)
+        {featuredProducts.slice(0, 8).map((product) => { return (
+            <ProductCard
+            key={product.productId}
+            productId={product.productId}
+            name={product.name}
+            price={product.price}
+            img={product.img}
+            console={product.console}
+            recommendedAge={product.recommendedAge}
+            genre={product.genre}
+            company={product.company}
+            />)
         })}
         </Carousel>
 

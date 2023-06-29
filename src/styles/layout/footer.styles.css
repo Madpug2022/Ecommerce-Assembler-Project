@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
 .footer-container {
     display: grid;
     grid-template-rows: 15vh 18vh auto;
     font-family: 'Inconsolata', monospace;
 }
 .f-top{
-    background-image: url('./resources/40.jpg');
+    background-image: url('../../assets/resources/40.jpg');
     filter:brightness(80%);
 }
 

@@ -1,23 +1,23 @@
 import { DropdownItem } from "../interfaces/dropdownItem"
 export const dropdownItems: DropdownItem[] = [
     {
-        href: '/',
+        href: '/games',
         title: 'Games'
     },
     {
-        href: '/',
+        href: '/console',
         title: 'Console'
     },
     {
-        href: '/',
+        href: '/joystic',
         title: 'Joysticks'
     },
     {
-        href: '/',
+        href: '/periferics',
         title: 'Periferics'
     },
     {
-        href: '/',
+        href: '/merchandise',
         title: 'Merchandise'
     }
 ]

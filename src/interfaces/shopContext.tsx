@@ -16,6 +16,10 @@ export interface ShopContextValue {
     handleLoged: (user:any) => any;
     userList: any[];
     setUserList: ([]:any) =>any
+    state: any;
+    setGenre: (genre: string) => void,
+    setCompany: (company: string) => void ,
+    setRecommendedAge: (age: string) => void
 
 }
 export interface ShopContextProviderProps {

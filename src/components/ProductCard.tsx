@@ -3,6 +3,8 @@ import '../styles/components/ProductCard.styles.css'
 import { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import { Store } from 'react-notifications-component';
+import * as images from '../assets/resources/carrousel/index';
+
 function ProductCard(props: Product){
     const {productId, name, price, img} = props;
     const shopContext = useContext(ShopContext);
@@ -26,7 +28,7 @@ function ProductCard(props: Product){
     return (
         <div className="product-card" id={productId}>
             <div className="pc-top">
-                <img src={img}/>
+                <img src={images[img as keyof typeof images]}/>
             </div>
             <div className="pc-bottom">
                 <h3 className="fProd-title">{name}</h3>

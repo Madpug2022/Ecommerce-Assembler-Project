@@ -1,6 +1,6 @@
 import '../styles/layout/footer.styles.css'
 import { BsInstagram, BsTwitter } from "react-icons/bs";
-
+import Logo from '../assets/resources/Logo.jpg'
 function Footer() {
     return (
         <footer>
@@ -26,7 +26,7 @@ function Footer() {
                 </div>
                 <div className="f-bottom">
                     <div className='fb-left'>
-                        <div><img src="./resources/Logo.jpg" alt="logo" /></div>
+                        <div><img src={Logo} alt="logo" /></div>
                         <div>
                             <p>© Pl△ay Store</p>
                             <p>All rigths reserved.</p>

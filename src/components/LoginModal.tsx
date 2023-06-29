@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import LogIn from './LogIn';
 import Register from './Register';
+import loginLogo from '../assets/resources/loginlogo.jpg'
 function LoginModal(){
     const shopContext = useContext(ShopContext);
 
@@ -23,7 +24,7 @@ function LoginModal(){
                     <button onClick={() => {closeModal()}}>X</button>
                 </div>
                 <div className="modal-tittle">
-                    <img src="./resources/loginlogo.jpg" alt="logInLogo" />
+                    <img src={loginLogo} alt="logInLogo" />
                 </div>
                 {currentForm === 'login' ? <LogIn onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm}/>}
             </div>

@@ -2,6 +2,8 @@ import '../styles/components/CartProduct.styles.css'
 import { Product } from '../interfaces/product'
 import { ShopContext } from '../context/ShopContext'
 import { useContext } from 'react'
+import * as images from '../assets/resources/carrousel/index';
+
 function CartProduct(props: {product: Product}){
     const {productId, name, img, price} = props.product
     const shopContext = useContext(ShopContext);
@@ -13,7 +15,7 @@ function CartProduct(props: {product: Product}){
 
     return (
     <div className='cart-item'>
-        <img src={img}/>
+        <img src={images[img as keyof typeof images]}/>
         <div className="description">
             <p> {" "} <b> {name} </b></p>
             <p> {price} €</p>

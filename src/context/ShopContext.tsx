@@ -1,8 +1,20 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useReducer } from "react";
 import { ShopContextValue, ShopContextProviderProps, CartItems } from  "../interfaces/shopContext"
 import { featuredProducts } from '../assets/products.db'
 export const ShopContext = createContext<ShopContextValue | null>(null);
 
+const reducer = (state:any, action:any) => {
+    switch (action.type) {
+      case 'SET_GENRE':
+        return { ...state, genre: action.payload };
+      case 'SET_COMPANY':
+        return { ...state, company: action.payload };
+      case 'SET_RECOMMENDED_AGE':
+        return { ...state, recommendedAge: action.payload };
+      default:
+        return state;
+    }
+  };
 
 export const ShopContextProvider = (props: ShopContextProviderProps) => {
     const [userList, setUserList] = useState<any[]>([])
@@ -102,7 +114,43 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         setCartItems((prev) => ({ ...prev, [id]: newAmmount }));
     }
 
-    const contextValue: ShopContextValue = {cartItems, addToCart, removeFromCart, getTotalCartAmmount, getTotalItems, updateCartItemCount, openModal, toggleModal, closeModal, buttonText, updateButtonText, logOut, loggedUser, handleLoged, userList, setUserList};
+    const initialState = { genre: '', company: '', recommendedAge: '' };
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    const setGenre = (genre: string) => {
+        dispatch({ type: 'SET_GENRE', payload: genre });
+    };
+    const setCompany = (company: string) => {
+        dispatch({ type: 'SET_COMPANY', payload: company });
+    };
+    const setRecommendedAge = (age: string) => {
+        dispatch({ type: 'SET_RECOMMENDED_AGE', payload: age });
+    };
+
+
+
+    const contextValue: ShopContextValue = {
+        cartItems,
+        addToCart,
+        removeFromCart,
+        getTotalCartAmmount,
+        getTotalItems,
+        updateCartItemCount,
+        openModal,
+        toggleModal,
+        closeModal,
+        buttonText,
+        updateButtonText,
+        logOut,
+        loggedUser,
+        handleLoged,
+        userList,
+        setUserList,
+        state,
+        setGenre,
+        setCompany,
+        setRecommendedAge
+    };
     return (
         <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
       );

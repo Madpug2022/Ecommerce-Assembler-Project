@@ -1,10 +1,11 @@
 import { SlMagnifier } from "react-icons/sl"
 import '../styles/components/HeaderSearchBar.styles.css'
+import logo from '../assets/resources/Logo.jpg'
 function HeaderSearchBar(){
     return (
         <div className="header-searchbar-container">
             <div className="logo-container">
-                <img src="./resources/Logo.jpg"/>
+                <img src={logo}/>
             </div>
             <div className="searchbar-container">
                 <form>
