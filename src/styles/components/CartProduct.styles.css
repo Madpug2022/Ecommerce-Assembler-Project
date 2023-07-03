@@ -11,6 +11,13 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
 }
+.cart-item-img-c {
+    width: 8vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .cart-item img {
     height: 15vh;
 }
@@ -41,4 +48,20 @@
     color: white;
     background-color: black;
 
+}
+@media screen and (max-width: 800px){
+    .cart-item-img-c {
+        width: 6vw;
+        margin: auto 2vh;
+    }
+    .cart-item img {
+        height: 8vh;
+    }
+    .description p {
+        font-size: 10px;
+    }
+    .count-handler input{
+        width: 2vh;
+        margin: auto 5px;
+    }
 }

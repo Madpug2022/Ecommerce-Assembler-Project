@@ -6,7 +6,7 @@ function LogIn(props: any){
     if(!shopContext) {
         return null;
     }
-    const { updateButtonText, closeModal, userList, setUserList, handleLoged } = shopContext;
+    const { updateButtonText, closeModal, userList, setUserList, handleLoged, setIsLoged } = shopContext;
 
     useEffect(() => {
         const fetchUsers = async() => {
@@ -44,12 +44,13 @@ function LogIn(props: any){
             window.localStorage.setItem('isLoged', JSON.stringify(true))
             window.localStorage.setItem('loged user', JSON.stringify(foundUser.email));
             handleLoged(foundUser)
+            setIsLoged(true);
             closeModal();
 
         } else {
             setErrMsg('User not found')
         }
-    }
+    };
     return (
         <>
         <div className="modal-body">

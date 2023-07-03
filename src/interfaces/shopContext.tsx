@@ -19,7 +19,9 @@ export interface ShopContextValue {
     state: any;
     setGenre: (genre: string) => void,
     setCompany: (company: string) => void ,
-    setRecommendedAge: (age: string) => void
+    setRecommendedAge: (age: string) => void,
+    isLoged: boolean,
+    setIsLoged: (input: boolean) => void
 
 }
 export interface ShopContextProviderProps {

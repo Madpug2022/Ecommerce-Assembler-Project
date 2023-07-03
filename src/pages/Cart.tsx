@@ -3,6 +3,7 @@ import { useState, ChangeEvent, useContext, useRef } from 'react';
 import CartProduct from '../components/CartProduct';
 import { ShopContext } from '../context/ShopContext';
 import { featuredProducts } from '../assets/products.db';
+import { Link } from 'react-router-dom';
 interface ShipmentOptionsState {
     freeShipment: boolean;
     premiumShipment: boolean;
@@ -81,9 +82,9 @@ function Cart(){
                     </div>
                     <div className='total-box'>
                         <span><b>Total:</b></span>
-                        <span><b>{(getTotalCartAmmount() && delivery.current) ? (Number(getTotalCartAmmount()) + Number(delivery.current.innerText)) + ' €' : Number(getTotalCartAmmount()) + ' €'}</b></span>
+                        <span><b>{(getTotalCartAmmount() && delivery.current) ? ((Number(getTotalCartAmmount()) + Number(delivery.current.innerText))).toFixed(2) + ' €' : Number(getTotalCartAmmount()) + ' €'}</b></span>
                     </div>
-                    <button className='checkout-btn'>Checkout</button>
+                    <button className='checkout-btn' ><Link className='checkout-link' to='/payment'>Checkout</Link></button>
                     <span className='warng-checkout'>This site is protected by a giant gnome with a stick please read our <a href='/'>Terms of services and elden contract</a></span>
                     </form>
                 </div>

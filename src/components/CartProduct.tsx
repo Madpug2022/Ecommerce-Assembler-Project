@@ -15,7 +15,9 @@ function CartProduct(props: {product: Product}){
 
     return (
     <div className='cart-item'>
-        <img src={images[img as keyof typeof images]}/>
+        <div className='cart-item-img-c'>
+            <img src={images[img as keyof typeof images]}/>
+        </div>
         <div className="description">
             <p> {" "} <b> {name} </b></p>
             <p> {price} €</p>

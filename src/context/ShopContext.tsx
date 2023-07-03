@@ -1,20 +1,20 @@
-import { createContext, useState, useEffect, useReducer } from "react";
+import { createContext, useState, useEffect, useReducer, useCallback } from "react";
 import { ShopContextValue, ShopContextProviderProps, CartItems } from  "../interfaces/shopContext"
 import { featuredProducts } from '../assets/products.db'
 export const ShopContext = createContext<ShopContextValue | null>(null);
 
 const reducer = (state:any, action:any) => {
     switch (action.type) {
-      case 'SET_GENRE':
+    case 'SET_GENRE':
         return { ...state, genre: action.payload };
-      case 'SET_COMPANY':
+    case 'SET_COMPANY':
         return { ...state, company: action.payload };
-      case 'SET_RECOMMENDED_AGE':
+    case 'SET_RECOMMENDED_AGE':
         return { ...state, recommendedAge: action.payload };
-      default:
+    default:
         return state;
     }
-  };
+};
 
 export const ShopContextProvider = (props: ShopContextProviderProps) => {
     const [userList, setUserList] = useState<any[]>([])
@@ -55,18 +55,19 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
     }
     const updateButtonText = (text: string) => {
         setButtonText(text);
-      };
-    const logOut = async() => {
+    };
+    const logOut = useCallback(() => {
         setButtonText("Log In");
         localStorage.removeItem("isLoged");
         localStorage.removeItem("token");
         localStorage.removeItem("loged user");
         localStorage.removeItem("Cart");
+        setIsLoged(false);
         setLogedUser({
             email: '',
             password: '',
         })
-    }
+    }, [])
 
     const [cartItems, setCartItems] =useState<CartItems>(getDefaultCart());
     const [openModal, setOpenModal] = useState(false)
@@ -100,7 +101,7 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
     }
     const addToCart = (id: string) => {
         setCartItems((prev) => ({ ...prev, [id]: prev[id] + 1  }));
-      };
+    };
 
     const removeFromCart = (id: string) => {
         setCartItems((prev) => {
@@ -127,7 +128,7 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         dispatch({ type: 'SET_RECOMMENDED_AGE', payload: age });
     };
 
-
+    const [isLoged, setIsLoged] = useState((localStorage.getItem('isLoged') == 'true') ? true : false)
 
     const contextValue: ShopContextValue = {
         cartItems,
@@ -149,9 +150,11 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         state,
         setGenre,
         setCompany,
-        setRecommendedAge
-    };
+        setRecommendedAge,
+        isLoged,
+        setIsLoged
+    }
     return (
         <ShopContext.Provider value={contextValue}>{props.children}</ShopContext.Provider>
-      );
+    );
 }

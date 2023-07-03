@@ -5,6 +5,10 @@
   margin:auto;
   font-family: 'Montserrat', sans-serif;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
 }
 .dropdown-menu ul {
     list-style: none;
@@ -106,11 +110,11 @@
     .navbar-btn {
       width: 100%;
       margin: 0;
+      padding-top: 2vh;
     }
     .menu-trigger {
       position: relative;
       display: flex;
-
       align-items: center;
       justify-content: center;
       width: 12vw;

@@ -81,4 +81,7 @@
         align-items: center;
         justify-content: space-evenly;
     }
+    .main-nav-link span {
+        font-size: 12px !important;
+    }
   }

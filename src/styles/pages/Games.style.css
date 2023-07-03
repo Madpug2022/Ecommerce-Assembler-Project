@@ -33,3 +33,16 @@
     grid-template-columns: 1fr 1fr 1fr;
 
 }
+@media screen and (max-width: 1000px){
+    .game-sect-rigth{
+        margin: 2vh 0 2vh 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+    .game-sect-left {
+        font-size: 10px;
+        margin: 2vh 0 2vh 5px;
+    }
+}

@@ -102,7 +102,7 @@ export let featuredProducts: Product[] = [
         genre: 'Action'
     },
     {
-        productId: '5e4e132b-5d9d-48ca-96c8-6ea1b3be7ac4',
+        productId: '5e4e132b-5d9d-48ca-96c8-a5f61eaac99d',
         name: 'Forespoken',
         price: 59.99,
         img: 'c198026',
@@ -132,7 +132,7 @@ export let featuredProducts: Product[] = [
         genre: 'Horror'
     },
     {
-        productId: 'a1b1d2d0-3935-42a9-9806-a5f61eaac99d',
+        productId: 'a1b1d2d0-3935-42a9-9806-a5f61eaac99p',
         name: 'Resident Evil 4: Remake PS5',
         price: 69.99,
         img: 'c206490',
@@ -184,7 +184,7 @@ export let productsList: Product[] = [
         genre: 'Action'
     },
     {
-        productId: '5e4e132b-5d9d-48ca-96c8-6ea1b3be7ac4',
+        productId: '5e4e132b-5d9d-48ca-96c8-a5f61eaac99d',
         name: 'Forespoken',
         price: 59.99,
         img: 'c198026',

@@ -38,7 +38,7 @@
 .pc-bottom button:hover{
     background: black ;
     color: whitesmoke;
-    border:none;
+    border: solid 2px black;
 }
 @media screen and (max-width:500px)  {
     .pc-top img {

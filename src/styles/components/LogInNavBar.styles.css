@@ -39,6 +39,7 @@
 @media screen and (max-width:800px){
     .log-in-nav-bar .nav-link{
         font-size: 12px;
+        margin: auto;
     }
     .log-in-nav-bar .nav-link:last-child{
         margin-left: 0;
@@ -52,6 +53,7 @@
 @media screen and (max-width:500px){
     .log-in-nav-bar .nav-link{
         font-size: 10px;
+        margin: auto;
     }
     .log-in-nav-bar .nav-link:last-child{
         margin-left: 0;
