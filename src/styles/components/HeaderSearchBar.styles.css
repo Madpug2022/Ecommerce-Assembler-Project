@@ -1,4 +1,5 @@
 .header-searchbar-container{
+    position: relative;
     width: 100%;
     grid-row: 2;
     background-color: black;
@@ -11,6 +12,7 @@
     height: 18vh;
 }
 .searchbar-container{
+
     width: 50%;
     background-color: white;
     padding: 5px;
@@ -35,7 +37,22 @@ display: flex;
     cursor: pointer;
 
 }
-@media screen and (max-width:500px) {
+.search-results{
+    background-color: white;
+    border: solid 2px gray;
+    border-radius: 5px;
+    transform: skewX(-4.5deg);
+    min-height: 8vh;
+    max-height: 60vh;
+    width: 45vw;
+    position: absolute;
+    top: 65%;
+    left: 40.3%;
+    padding: 4px;
+    z-index: 1010;
+    overflow: hidden;
+}
+@media screen and (max-width:700px) {
     .searchbar-container{
         display: none;
     }

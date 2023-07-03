@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+.filtered-item {
+    font-family: 'Inconsolata', monospace;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin: 4px auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.fi-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.fi-left img {
+    padding: 5px;
+    margin: 1px;
+    height: 15vh;
+}
