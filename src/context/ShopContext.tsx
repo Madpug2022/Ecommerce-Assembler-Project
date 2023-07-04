@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useReducer, useCallback } from "react";
+import { createContext, useState, useEffect, useReducer, useCallback, useMemo } from "react";
 import { ShopContextValue, ShopContextProviderProps, CartItems } from  "../interfaces/shopContext"
 import { featuredProducts } from '../assets/products.db'
 export const ShopContext = createContext<ShopContextValue | null>(null);
@@ -99,9 +99,9 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         }
         return totalAmmount.toFixed(2);
     }
-    const addToCart = (id: string) => {
+    const addToCart = useMemo( () =>(id: string) => {
         setCartItems((prev) => ({ ...prev, [id]: prev[id] + 1  }));
-    };
+    }, [cartItems])
 
     const removeFromCart = (id: string) => {
         setCartItems((prev) => {

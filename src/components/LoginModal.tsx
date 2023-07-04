@@ -1,5 +1,5 @@
 import '../styles/components/LoginModal.styles.css'
-import { useContext, useState } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import { ShopContext } from "../context/ShopContext";
 import LogIn from './LogIn';
 import Register from './Register';
@@ -12,6 +12,19 @@ function LoginModal(){
     }
     const { closeModal } = shopContext;
 
+    let modalRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        let handler = (e: MouseEvent)=> {
+          if(modalRef.current && !modalRef.current.contains(e.target as Node)){
+          closeModal();
+          }
+        }
+        document.addEventListener('mousedown', handler);
+
+        return() =>
+        document.removeEventListener('mousedown', handler);
+      })
+
     const [currentForm, setCurrentForm] = useState('login');
     const toggleForm = (formName: string) => {
         setCurrentForm(formName)
@@ -19,7 +32,7 @@ function LoginModal(){
     return (
         <>
         <div className="modal-background">
-            <div className="modal-container">
+            <div className="modal-container" ref={modalRef}>
                 <div className="modal-top">
                     <button onClick={() => {closeModal()}}>X</button>
                 </div>
