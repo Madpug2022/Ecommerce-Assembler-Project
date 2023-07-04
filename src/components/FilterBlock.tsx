@@ -2,6 +2,8 @@ import '../styles/components/FilterBlock.styles.css'
 import { ShopContext } from '../context/ShopContext';
 import { useContext } from 'react';
 
+
+
 function FilterBlock(props: any){
     const filterparams = props.filterparams;
     const shopContext = useContext(ShopContext);

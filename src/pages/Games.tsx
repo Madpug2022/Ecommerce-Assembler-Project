@@ -8,6 +8,7 @@ import { productsList } from '../assets/products.db';
 import ProductCard from '../components/ProductCard';
 import ClipLoader from "react-spinners/ClipLoader";
 import { ShopContext } from '../context/ShopContext';
+import UnderConstruction from '../components/UnderConstruction';
 
 const override: CSSProperties = {
     display: "flex",
@@ -103,7 +104,7 @@ function GamesPage(){
                 />
             )})}
             </div>
-        </section>) : (<div>testo</div>) }
+        </section>) : (<UnderConstruction/>) }
         </>
 )
 }
