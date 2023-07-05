@@ -57,7 +57,7 @@ function Register(props: any){
             const response = await fetch((url), {
             method: "POST",
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ token, email, pwd, status:"not logged" })})
+        body: JSON.stringify({ token, email, pwd })})
         console.log(JSON.stringify(response));
         setSucess(true);
         } catch (error){

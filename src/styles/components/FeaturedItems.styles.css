@@ -40,3 +40,12 @@
     }
 
 }
+@media screen and (max-width:400px) {
+    .f-item {
+        font-size: 28px;
+    }
+    .f-item p{
+        font-size: 8px;
+        font-weight: 600;
+    }
+}

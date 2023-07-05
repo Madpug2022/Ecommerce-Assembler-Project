@@ -148,3 +148,14 @@
       font-size: 12px;
     }
   }
+  @media screen and (max-width: 400px) {
+    .menu-trigger {
+      top: 21px;
+
+    }
+    .menu-trigger span {
+      font-weight: 500;
+      font-size: 8px;
+      transform: none;
+    }
+  }

@@ -103,14 +103,14 @@ export const ShopContextProvider = (props: ShopContextProviderProps) => {
         setCartItems((prev) => ({ ...prev, [id]: prev[id] + 1  }));
     }, [cartItems])
 
-    const removeFromCart = (id: string) => {
+    const removeFromCart = useMemo(() => (id: string) => {
         setCartItems((prev) => {
             if (prev[id] > 0) {
                 return { ...prev, [id]: prev[id] - 1};
             }
             return prev;
         });
-    };
+    }, [cartItems]);
     const updateCartItemCount = (newAmmount:number, id: string) => {
         setCartItems((prev) => ({ ...prev, [id]: newAmmount }));
     }
