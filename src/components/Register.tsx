@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import '../styles/components/Register.styles.css'
 const EMAIL_REGEX = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b/;
 const PASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,24}$/;
-const url: string = 'http://localhost:3000/users';
+
 function Register(props: any){
     const userRef = useRef<any>();
     const userErrRef = useRef<any>();
@@ -45,6 +45,7 @@ function Register(props: any){
 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
+        const url: string = 'http://localhost:3000/users';
         const validate1 = EMAIL_REGEX.test(email);
         const validate2 = PASS_REGEX.test(pwd);
         if (!validate1 || !validate2) {
@@ -57,7 +58,8 @@ function Register(props: any){
             const response = await fetch((url), {
             method: "POST",
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ token, email, pwd })})
+        body: JSON.stringify({ "token":token, "email":email, "password":pwd })})
+        console.log(token, email, pwd)
         console.log(JSON.stringify(response));
         setSucess(true);
         } catch (error){
