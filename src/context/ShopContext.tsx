@@ -17,6 +17,7 @@ const reducer = (state:any, action:any) => {
 };
 
 export const ShopContextProvider = (props: ShopContextProviderProps) => {
+
     const [userList, setUserList] = useState<any[]>([])
 
     const [loggedUser, setLogedUser] = useState({

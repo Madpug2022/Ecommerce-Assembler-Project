@@ -45,6 +45,7 @@ function Register(props: any){
 
     const handleSubmit = async (event: any) => {
         event.preventDefault();
+        const token = uuidv4();
         const url: string = 'http://localhost:3000/users';
         const validate1 = EMAIL_REGEX.test(email);
         const validate2 = PASS_REGEX.test(pwd);
@@ -54,11 +55,10 @@ function Register(props: any){
         }
 
         try{
-            const token = uuidv4();
             const response = await fetch((url), {
             method: "POST",
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({ "token":token, "email":email, "password":pwd })})
+        body: JSON.stringify({ "id":token, "email":email, "password":pwd })})
         console.log(token, email, pwd)
         console.log(JSON.stringify(response));
         setSucess(true);
